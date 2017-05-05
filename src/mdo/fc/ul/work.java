@@ -30,7 +30,7 @@ public class work {
 
     public static void main(String[] args) {
         int N = 5;   // number of items
-        int W = 5;   // maximum weight of knapsack
+        int W = 11;   // maximum weight of knapsack
 
         int[] profit = new int[N+1];
         int[] weight = new int[N+1];
@@ -38,17 +38,17 @@ public class work {
         //profit = {1, 6, 18, 22, 28};
         //weight = {1,2,5,6,7};
 
-        profit[0]=1;
-        profit[1]=6;
-        profit[2]=18;
-        profit[3]=22;
-        profit[4]=28;
+        profit[1]=1;
+        profit[2]=6;
+        profit[3]=18;
+        profit[4]=22;
+        profit[5]=28;
 
-        weight[0]=1;
-        weight[1]=2;
-        weight[2]=5;
-        weight[3]=6;
-        weight[4]=7;
+        weight[1]=1;
+        weight[2]=2;
+        weight[3]=5;
+        weight[4]=6;
+        weight[5]=7;
 
         // generate random instance, items 1..N
         //for (int n = 1; n <= N; n++) {
