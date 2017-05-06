@@ -93,7 +93,7 @@ public class work {
         System.out.println("item" + " \t " + "profit" + " \t " + "weight" + " \t " + "take");
         System.out.println("----" + "--|--" + "------" + "--|--" + "------" + "--|--" + "----" );
         for (int n = 1; n <= N; n++) {
-            System.out.println(n + " \t\t " + profit[n] + " \t\t " + weight[n] + " \t\t " + take[n]);
+            System.out.println( String.format("%1$6s",n ) + " \t " + String.format("%1$6s", profit[n]) + " \t " + String.format("%1$6s", weight[n]) + " \t " + take[n]);
         }
     }
 }

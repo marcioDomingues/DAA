@@ -1,10 +1,9 @@
 package mdo.fc.ul;
 
 /**
- * Created by mdo on 5/5/17.
- * cuting rod example
+ * Created by mdomingues on 06/05/17.
  */
-public class testes {
+public class rodCut  {
     /* Returns the best obtainable price for a rod of
        length n and price[] as prices of different pieces */
     static int cutRod(int price[],int n)
@@ -29,16 +28,11 @@ public class testes {
     /* Driver program to test above functions */
     public static void main(String args[])
     {
-        //int arr[] = new int[] {1, 5, 8, 9, 10, 17, 17, 20};
-        //int arr[] = new int[] {0,3,2,-3,-2,-1,0};
-        int arr[] = new int[] {1,-4,-1,4,5,-4,6,7,-2};
-
+        int arr[] = new int[] {1, 5, 8, 9, 10, 17, 17, 20};
 
         int size = arr.length;
-        if (validate ( arr[0],0, arr[arr.length-1], arr.length-1  ) ){
-            System.out.println("Maximum Obtainable Value is " +
-                    cutRod(arr, size));
-        }
+        System.out.println("Maximum Obtainable Value is " +
+                cutRod(arr, size));
 
     }
 

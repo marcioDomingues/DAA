@@ -53,7 +53,9 @@ public class Knapsack {
 
                 // take item n
                 int option2 = Integer.MIN_VALUE;
-                if (weight[n] <= w) option2 = profit[n] + opt[n-1][w-weight[n]];
+
+                if (weight[n] <= w)
+                    option2 = profit[n] + opt[n-1][w-weight[n]];
 
                 // select better of two options
                 opt[n][w] = Math.max(option1, option2);
