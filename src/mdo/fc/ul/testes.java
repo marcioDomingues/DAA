@@ -7,7 +7,7 @@ package mdo.fc.ul;
 public class testes {
     /* Returns the best obtainable price for a rod of
        length n and price[] as prices of different pieces */
-    static int cutRod(int price[],int n)
+    static int eventsVisited (int angles[],int n)
     {
         int val[] = new int[n+1];
         val[0] = 0;
@@ -17,9 +17,9 @@ public class testes {
         for (int i = 1; i<=n; i++)
         {
             int max_val = Integer.MIN_VALUE;
+
             for (int j = 0; j < i; j++)
-                max_val = Math.max(max_val,
-                        price[j] + val[i-j-1]);
+                max_val = Math.max(max_val, angles[j] + val[i-j-1]);
             val[i] = max_val;
         }
 
@@ -35,9 +35,10 @@ public class testes {
 
 
         int size = arr.length;
+
         if (validate ( arr[0],0, arr[arr.length-1], arr.length-1  ) ){
             System.out.println("Maximum Obtainable Value is " +
-                    cutRod(arr, size));
+                    eventsVisited (arr, size));
         }
 
     }

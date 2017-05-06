@@ -50,6 +50,7 @@ public class work {
         weight[4]=6;
         weight[5]=7;
 
+
         // generate random instance, items 1..N
         //for (int n = 1; n <= N; n++) {
         //    profit[n] = StdRandom.uniform(1000);
@@ -89,11 +90,50 @@ public class work {
             }
         }
 
+
+
+
         // print results
         System.out.println("item" + " \t " + "profit" + " \t " + "weight" + " \t " + "take");
         System.out.println("----" + "--|--" + "------" + "--|--" + "------" + "--|--" + "----" );
         for (int n = 1; n <= N; n++) {
             System.out.println( String.format("%1$6s",n ) + " \t " + String.format("%1$6s", profit[n]) + " \t " + String.format("%1$6s", weight[n]) + " \t " + take[n]);
         }
+
+
+
+
+        System.out.println( knapsack(weight, profit, W));
+
+    }//end of main
+
+
+
+
+
+    private static int knapsack( int[] w, int[] v, int W) {
+        int[][] dp = new int[w.length][W + 1];
+
+        dp[0][0] = 0;
+
+        for(int i = 1 ; i < dp[0].length; i++){
+            if(w[0] <= i){
+                dp[0][i] = v[0];
+            }else{
+                dp[0][i] = 0;
+            }
+        }
+
+        for (int i = 1; i < dp.length; i++) {
+            for (int j = 1; j < dp[i].length; j++) {
+                // if a weight is more than the allowed weight, that weight cannot be picked.
+                if(w[i] > j){
+                    dp[i][j] = dp[i-1][j];
+                }else{
+                    dp[i][j] = Math.max(dp[i-1][j], v[i] + dp[i-1][j-w[i]]);
+                }
+            }
+        }
+        return dp[dp.length-1][W];
     }
 }
