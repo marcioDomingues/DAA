@@ -30,7 +30,7 @@ public class work {
 
     public static void main(String[] args) {
         int N = 5;   // number of items
-        int W = 5;   // maximum weight of knapsack
+        int W = 11;   // maximum weight of knapsack
 
         int[] profit = new int[N+1];
         int[] weight = new int[N+1];
